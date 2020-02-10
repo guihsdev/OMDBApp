@@ -199,65 +199,70 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               );
                             } else {
-                              favFilmWidget = ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  shrinkWrap: true,
-                                  itemCount: _omdbStore.favFilms.length,
-                                  itemBuilder: (context, index) {
-                                    _filme = _omdbStore.favFilms[index];
-                                    return AnimationLimiter(
-                                      child:
-                                          AnimationConfiguration.staggeredList(
-                                        position: index,
-                                        duration: Duration(milliseconds: 300),
-                                        child: ScaleAnimation(
-                                          child: InkWell(
-                                            enableFeedback: true,
-                                            splashColor: Colors.blue,
-                                            borderRadius:
-                                                BorderRadius.circular(5),
-                                            onTap: () {
-                                              print(_filme.title);
-                                              _omdbStore.fetchFilmsByImdbId(
-                                                  imdbId: _omdbStore
-                                                      .favFilms[index].imdbID
-                                                      .toString());
-                                              _omdbStore.setFavValue(
-                                                  fav: _omdbStore
-                                                      .favFilms[index].fav);
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          FilmDetail(
-                                                            heroTag:
-                                                                "fav${_omdbStore.favFilms[index].imdbID}",
-                                                            film: _omdbStore
-                                                                    .favFilms[
-                                                                index],
-                                                            index: index,
-                                                          ),
-                                                      fullscreenDialog: true));
-                                            },
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(5),
-                                              child: Material(
-                                                elevation: 2,
-                                                child: FavFilms(
-                                                  heroTag:
-                                                      "fav${_filme.imdbID}",
-                                                  index: index,
-                                                  title: '${_filme.title}',
-                                                  poster: '${_filme.poster}',
-                                                  rated: '${_filme.rated}',
+                              favFilmWidget = Container(
+                                color: Colors.white,
+                                child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    shrinkWrap: true,
+                                    itemCount: _omdbStore.favFilms.length,
+                                    itemBuilder: (context, index) {
+                                      _filme = _omdbStore.favFilms[index];
+                                      return AnimationLimiter(
+                                        child: AnimationConfiguration
+                                            .staggeredList(
+                                          position: index,
+                                          duration: Duration(milliseconds: 300),
+                                          child: ScaleAnimation(
+                                            child: InkWell(
+                                              enableFeedback: true,
+                                              splashColor: Colors.blue,
+                                              borderRadius:
+                                                  BorderRadius.circular(5),
+                                              onTap: () {
+                                                print(_filme.title);
+                                                _omdbStore.fetchFilmsByImdbId(
+                                                    imdbId: _omdbStore
+                                                        .favFilms[index].imdbID
+                                                        .toString());
+                                                _omdbStore.setFavValue(
+                                                    fav: _omdbStore
+                                                        .favFilms[index].fav);
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            FilmDetail(
+                                                              heroTag:
+                                                                  "fav${_omdbStore.favFilms[index].imdbID}",
+                                                              film: _omdbStore
+                                                                      .favFilms[
+                                                                  index],
+                                                              index: index,
+                                                            ),
+                                                        fullscreenDialog:
+                                                            true));
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5),
+                                                child: Material(
+                                                  elevation: 2,
+                                                  child: FavFilms(
+                                                    heroTag:
+                                                        "fav${_filme.imdbID}",
+                                                    index: index,
+                                                    title: '${_filme.title}',
+                                                    poster: '${_filme.poster}',
+                                                    rated: '${_filme.rated}',
+                                                  ),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    );
-                                  });
+                                      );
+                                    }),
+                              );
                             }
                           }
                           return favFilmWidget;
@@ -270,13 +275,16 @@ class _HomePageState extends State<HomePage> {
               Flexible(
                 child: Column(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20, bottom: 20),
-                      child: Center(
-                          child: Text(
-                        "Filmes pesquisados",
-                        style: TextStyle(fontSize: 25),
-                      )),
+                    Container(
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        child: Center(
+                            child: Text(
+                          "Filmes pesquisados",
+                          style: TextStyle(fontSize: 25),
+                        )),
+                      ),
                     ),
                     Observer(
                       name: 'ListLocalFilms',
@@ -337,8 +345,6 @@ class _HomePageState extends State<HomePage> {
                                           child: InkWell(
                                             enableFeedback: true,
                                             splashColor: Colors.blue,
-                                            borderRadius:
-                                                BorderRadius.circular(5),
                                             onTap: () {
                                               print(_filme.title);
                                               _omdbStore.fetchFilmsByImdbId(

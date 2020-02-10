@@ -193,123 +193,131 @@ class FilmDetail extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 5, left: 10),
-                                child: Container(
-                                  margin: EdgeInsets.all(5),
-                                  child: InkWell(
-                                    child: Text(
-                                      "${_film.plot}",
-                                      maxLines: 3,
-                                      overflow: TextOverflow.fade,
-                                      softWrap: true,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontFamily: 'Noto Sans',
+                              Material(
+                                elevation: 2,
+                                color: Colors.lightBlue[50],
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 5, left: 10),
+                                  child: Container(
+                                    margin: EdgeInsets.all(5),
+                                    child: InkWell(
+                                      child: Text(
+                                        "${_film.plot}",
+                                        maxLines: 3,
+                                        overflow: TextOverflow.fade,
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontFamily: 'Noto Sans',
+                                        ),
                                       ),
-                                    ),
-                                    onTap: () {
-                                      _showDialog(
-                                          context,
-                                          Container(
-                                            child: Text("Mais informações"),
-                                          ),
-                                          SingleChildScrollView(
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: <Widget>[
-                                                (_film.plot != null
-                                                    ? Text(
-                                                        "Enredo: ${_film.plot}",
-                                                        softWrap: true,
-                                                        style: TextStyle(
-                                                            fontSize: 20),
-                                                      )
-                                                    : Container()),
-                                                (_film.actors != null
-                                                    ? Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 15),
-                                                        child: Text(
-                                                          "Atores(Atrizes): ${_film.actors}",
-                                                          softWrap: true,
-                                                          style: TextStyle(
-                                                              fontSize: 20),
-                                                        ),
-                                                      )
-                                                    : Container()),
-                                                (_film.director != null
-                                                    ? Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 15),
-                                                        child: Text(
-                                                          "Diretor(a): ${_film.director}",
-                                                          softWrap: true,
-                                                          style: TextStyle(
-                                                              fontSize: 20),
-                                                        ),
-                                                      )
-                                                    : Container()),
-                                                (_film.writer != null
-                                                    ? Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 15),
-                                                        child: Text(
-                                                          "Escritor(a): ${_film.writer}",
-                                                          softWrap: true,
-                                                          style: TextStyle(
-                                                              fontSize: 20),
-                                                        ),
-                                                      )
-                                                    : Container()),
-                                                (_film.awards != null
-                                                    ? Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 15),
-                                                        child: Text(
-                                                          "Nomeações: ${_film.awards}",
-                                                          softWrap: true,
-                                                          style: TextStyle(
-                                                              fontSize: 20),
-                                                        ),
-                                                      )
-                                                    : Container()),
-                                                FlatButton(
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: <Widget>[
-                                                        Text(
-                                                          "Ver IMDB do filme",
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                      .lightBlue[
-                                                                  600]),
-                                                        ),
-                                                        Icon(
-                                                          Icons.open_in_new,
-                                                          color: Colors
-                                                              .lightBlue[600],
-                                                        )
-                                                      ],
-                                                    ),
-                                                    onPressed: () {
-                                                      _launchURL(
-                                                          'https://www.imdb.com/title/${_film.imdbID}/');
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    })
-                                              ],
+                                      onTap: () {
+                                        _showDialog(
+                                            context,
+                                            Container(
+                                              child: Text("Mais informações"),
                                             ),
-                                          ));
-                                    },
+                                            SingleChildScrollView(
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  (_film.plot != null
+                                                      ? Text(
+                                                          "Enredo: ${_film.plot}",
+                                                          softWrap: true,
+                                                          style: TextStyle(
+                                                              fontSize: 20),
+                                                        )
+                                                      : Container()),
+                                                  (_film.actors != null
+                                                      ? Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  top: 15),
+                                                          child: Text(
+                                                            "Atores(Atrizes): ${_film.actors}",
+                                                            softWrap: true,
+                                                            style: TextStyle(
+                                                                fontSize: 20),
+                                                          ),
+                                                        )
+                                                      : Container()),
+                                                  (_film.director != null
+                                                      ? Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  top: 15),
+                                                          child: Text(
+                                                            "Diretor(a): ${_film.director}",
+                                                            softWrap: true,
+                                                            style: TextStyle(
+                                                                fontSize: 20),
+                                                          ),
+                                                        )
+                                                      : Container()),
+                                                  (_film.writer != null
+                                                      ? Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  top: 15),
+                                                          child: Text(
+                                                            "Escritor(a): ${_film.writer}",
+                                                            softWrap: true,
+                                                            style: TextStyle(
+                                                                fontSize: 20),
+                                                          ),
+                                                        )
+                                                      : Container()),
+                                                  (_film.awards != null
+                                                      ? Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  top: 15),
+                                                          child: Text(
+                                                            "Nomeações: ${_film.awards}",
+                                                            softWrap: true,
+                                                            style: TextStyle(
+                                                                fontSize: 20),
+                                                          ),
+                                                        )
+                                                      : Container()),
+                                                  FlatButton(
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: <Widget>[
+                                                          Text(
+                                                            "Ver IMDB do filme",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                        .lightBlue[
+                                                                    600]),
+                                                          ),
+                                                          Icon(
+                                                            Icons.open_in_new,
+                                                            color: Colors
+                                                                .lightBlue[600],
+                                                          )
+                                                        ],
+                                                      ),
+                                                      onPressed: () {
+                                                        _launchURL(
+                                                            'https://www.imdb.com/title/${_film.imdbID}/');
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      })
+                                                ],
+                                              ),
+                                            ));
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
