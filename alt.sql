@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS omdb (
+    `Title` VARCHAR(17) CHARACTER SET utf8,
+    `Year` INT,
+    `Rated` VARCHAR(5) CHARACTER SET utf8,
+    `Released` DATETIME,
+    `Runtime` VARCHAR(7) CHARACTER SET utf8,
+    `Genre` VARCHAR(32) CHARACTER SET utf8,
+    `Director` VARCHAR(24) CHARACTER SET utf8,
+    `Writer` VARCHAR(599) CHARACTER SET utf8,
+    `Actors` VARCHAR(61) CHARACTER SET utf8,
+    `Plot` VARCHAR(228) CHARACTER SET utf8,
+    `Language` VARCHAR(32) CHARACTER SET utf8,
+    `Country` VARCHAR(3) CHARACTER SET utf8,
+    `Awards` VARCHAR(67) CHARACTER SET utf8,
+    `Poster` VARCHAR(98) CHARACTER SET utf8,
+    `Ratings_Source` VARCHAR(23) CHARACTER SET utf8,
+    `Ratings_Value` VARCHAR(6) CHARACTER SET utf8,
+    `Metascore` INT,
+    `imdbRating` NUMERIC(2, 1),
+    `imdbVotes` INT,
+    `imdbID` VARCHAR(9) CHARACTER SET utf8,
+    `Type` VARCHAR(5) CHARACTER SET utf8,
+    `DVD` DATETIME,
+    `BoxOffice` VARCHAR(3) CHARACTER SET utf8,
+    `Production` VARCHAR(14) CHARACTER SET utf8,
+    `Website` VARCHAR(3) CHARACTER SET utf8,
+    `Response` VARCHAR(4) CHARACTER SET utf8
+);
+INSERT INTO omdb VALUES
+    ('Avengers: Endgame',2019,'PG-13','2019-04-26 00:00:00','181 min','Action, Adventure, Drama, Sci-Fi','Anthony Russo, Joe Russo','Christopher Markus (screenplay by), Stephen McFeely (screenplay by), Stan Lee (based on the Marvel comics by), Jack Kirby (based on the Marvel comics by), Joe Simon (Captain America created by), Jack Kirby (Captain America created by), Steve Englehart (Star-Lord created by), Steve Gan (Star-Lord created by), Bill Mantlo (Rocket Raccoon created by), Keith Giffen (Rocket Raccoon created by), Jim Starlin (Thanos, Gamora & Drax created by), Stan Lee (Groot created by), Larry Lieber (Groot created by), Jack Kirby (Groot created by), Steve Englehart (Mantis created by), Don Heck (Mantis created by)','Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth','After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'' actions and restore balance to the universe.','English, Japanese, Xhosa, German','USA','Nominated for 1 BAFTA Film Award. Another 32 wins & 75 nominations.','https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg','Internet Movie Database','8.5/10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+    ('Avengers: Endgame',2019,'PG-13','2019-04-26 00:00:00','181 min','Action, Adventure, Drama, Sci-Fi','Anthony Russo, Joe Russo','Christopher Markus (screenplay by), Stephen McFeely (screenplay by), Stan Lee (based on the Marvel comics by), Jack Kirby (based on the Marvel comics by), Joe Simon (Captain America created by), Jack Kirby (Captain America created by), Steve Englehart (Star-Lord created by), Steve Gan (Star-Lord created by), Bill Mantlo (Rocket Raccoon created by), Keith Giffen (Rocket Raccoon created by), Jim Starlin (Thanos, Gamora & Drax created by), Stan Lee (Groot created by), Larry Lieber (Groot created by), Jack Kirby (Groot created by), Steve Englehart (Mantis created by), Don Heck (Mantis created by)','Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth','After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'' actions and restore balance to the universe.','English, Japanese, Xhosa, German','USA','Nominated for 1 BAFTA Film Award. Another 32 wins & 75 nominations.','https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg','Rotten Tomatoes','94%',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+    ('Avengers: Endgame',2019,'PG-13','2019-04-26 00:00:00','181 min','Action, Adventure, Drama, Sci-Fi','Anthony Russo, Joe Russo','Christopher Markus (screenplay by), Stephen McFeely (screenplay by), Stan Lee (based on the Marvel comics by), Jack Kirby (based on the Marvel comics by), Joe Simon (Captain America created by), Jack Kirby (Captain America created by), Steve Englehart (Star-Lord created by), Steve Gan (Star-Lord created by), Bill Mantlo (Rocket Raccoon created by), Keith Giffen (Rocket Raccoon created by), Jim Starlin (Thanos, Gamora & Drax created by), Stan Lee (Groot created by), Larry Lieber (Groot created by), Jack Kirby (Groot created by), Steve Englehart (Mantis created by), Don Heck (Mantis created by)','Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth','After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'' actions and restore balance to the universe.','English, Japanese, Xhosa, German','USA','Nominated for 1 BAFTA Film Award. Another 32 wins & 75 nominations.','https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg','Metacritic','78/100',78,8.5,640310,'tt4154796','movie','2019-07-30 00:00:00','N/A','Marvel Studios','N/A','True');
