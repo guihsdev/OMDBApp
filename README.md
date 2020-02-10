@@ -1,16 +1,14 @@
-# omdbapp
+# OMDB App
 
-A new Flutter project.
+Um projeto Flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Este projeto constitui da possibilidade de:
 
-A few resources to get you started if this is your first Flutter project:
+- Fazer uma consulta na API [OMDB API](http://omdbapi.com/);
+- Apresentar a resposta;
+- Ter a opção de adicionar um filme como favorito;
+- O Filme adicionado como favorito estar acessível offline;
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Este projeto conta com [MobX](https://pub.dev/packages/mobx) e [Providers](https://pub.dev/documentation/provider/latest/provider/MultiProvider-class.html) para gerenciamento de estados e provedores de informações.
